@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE tienda SYSTEM "tienda.dtd">
+<?xml-stylesheet type="text/xsl" href="tienda.xsl"?>
+
+<tienda>
+    
+    <producto>
+        <nombre>Cyber Jacket</nombre>
+        <precio>120</precio>
+        <imagen>img/hombre1.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Punk Hoodie</nombre>
+        <precio>80</precio>
+        <imagen>img/hombre2.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Urban Tech Coat</nombre>
+        <precio>140</precio>
+        <imagen>img/hombre3.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Dark Street Fit</nombre>
+        <precio>95</precio>
+        <imagen>img/hombre4.jpg</imagen>
+    </producto>
+    
+</tienda>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registro</title>
+<link rel="stylesheet" href="estilos.css">
+<script src="script.js"></script>
+</head>
+
+<body class="registro-body">
+
+<div class="auth-container">
+
+<h1>SLOBBER'S</h1>
+<h2>Crear cuenta</h2>
+
+<form onsubmit="registro(event)" class="auth-form">
+
+<div class="input-group">
+<input id="nombre" required>
+<label>Nombre</label>
+</div>
+
+<div class="input-group">
+<input id="email" type="email" required>
+<label>Email</label>
+</div>
+
+<div class="input-group">
+<input id="pass" type="password" required>
+<label>Contraseña</label>
+</div>
+
+<button class="btn-auth" type="submit">CREAR CUENTA</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

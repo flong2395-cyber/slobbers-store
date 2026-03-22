@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE tienda SYSTEM "tienda.dtd">
+<?xml-stylesheet type="text/xsl" href="tienda.xsl"?>
+
+<tienda>
+    
+    <producto>
+        <nombre>Chain Punk</nombre>
+        <precio>25</precio>
+        <imagen>img/art1.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Cyber Ring</nombre>
+        <precio>15</precio>
+        <imagen>img/art2.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Neon Chain</nombre>
+        <precio>30</precio>
+        <imagen>img/art3.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Dark Bracelet</nombre>
+        <precio>20</precio>
+        <imagen>img/art4.jpg</imagen>
+    </producto>
+    
+</tienda>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="index.xsl"?>
+
+<home>
+    
+    <categoria nombre="HOMBRE" link="hombre.xml" img="img/hombre.jpg">
+        <producto nombre="Cyber Jacket" precio="120" img="img/hombre.jpg"/>
+        <producto nombre="Punk Hoodie" precio="80" img="img/hombre.jpg"/>
+    </categoria>
+    
+    <categoria nombre="MUJER" link="mujer.xml" img="img/mujer.jpg">
+        <producto nombre="Cyber Dress" precio="70" img="img/mujer.jpg"/>
+        <producto nombre="Neon Jacket" precio="120" img="img/mujer.jpg"/>
+    </categoria>
+    
+    <categoria nombre="CALZADO" link="calzado.xml" img="img/calzado.jpg">
+        <producto nombre="Cyber Sneakers" precio="110" img="img/calzado.jpg"/>
+    </categoria>
+    
+    <categoria nombre="BISUTERIA" link="bisuteria.xml" img="img/bisuteria.jpg">
+        <producto nombre="Chain Punk" precio="25" img="img/bisuteria.jpg"/>
+    </categoria>
+    
+</home>

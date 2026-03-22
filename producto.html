@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Producto</title>
+<link rel="stylesheet" href="estilos.css">
+<script src="script.js"></script>
+</head>
+
+<body>
+
+<header class="header-pro">
+    <div class="logo">
+        <a href="index.xml">SLOBBER'S</a>
+    </div>
+
+    <nav class="nav-menu">
+        <a href="hombre.xml">CABALLEROS</a>
+        <a href="mujer.xml">DAMAS</a>
+        <a href="bisuteria.xml">ARTÍCULOS</a>
+    </nav>
+
+    <div class="header-actions">
+        <div class="icono" onclick="toggleCart()">
+            🛒 <span id="cart-count">0</span>
+        </div>
+    </div>
+</header>
+
+<!-- PRODUCTO -->
+<div class="producto-pro">
+
+    <div class="producto-img-pro">
+        <img id="imgPrincipal">
+
+        <div class="miniaturas-pro">
+            <img onclick="cambiarImg(this)" src="img/hombre.jpg">
+            <img onclick="cambiarImg(this)" src="img/hombre.jpg">
+            <img onclick="cambiarImg(this)" src="img/hombre.jpg">
+        </div>
+    </div>
+
+    <div class="producto-info-pro">
+
+        <p class="brand">SLOBBER'S</p>
+        <h1 id="nombre"></h1>
+        <p class="precio" id="precio"></p>
+
+        <h3>Size</h3>
+        <div class="tallas-pro">
+            <span onclick="selectSize(this)">S</span>
+            <span onclick="selectSize(this)">M</span>
+            <span onclick="selectSize(this)">L</span>
+            <span onclick="selectSize(this)">XL</span>
+            <span onclick="selectSize(this)">2XL</span>
+            <span onclick="selectSize(this)">3XL</span>
+            <span onclick="selectSize(this)">4XL</span>
+        </div>
+
+        <h3>Quantity</h3>
+        <div class="cantidad-pro">
+            <button onclick="cambiarCantidad(-1)">−</button>
+            <span id="cantidad">1</span>
+            <button onclick="cambiarCantidad(1)">+</button>
+        </div>
+
+        <button class="btn-pro" onclick="comprar()">
+            Añadir al carrito
+        </button>
+
+        <ul class="descripcion-pro">
+            <li>100% Cotton</li>
+            <li>Unisex</li>
+            <li>Regular Fit</li>
+            <li>Premium Design</li>
+        </ul>
+
+    </div>
+
+</div>
+
+<!-- DESCRIPCIÓN DETALLADA -->
+<section class="detalle-pro">
+
+    <h2>Descripción</h2>
+
+    <p>
+        Inspirada en el estilo urbano futurista, la Cyber Jacket redefine el streetwear moderno.
+        Diseñada para destacar, combina estética cyberpunk con materiales premium.
+    </p>
+
+    <p>
+        Perfecta para uso diario o outfits más agresivos, aporta presencia y comodidad.
+    </p>
+
+    <ul>
+        <li>Tejido técnico premium</li>
+        <li>Alta durabilidad</li>
+        <li>Diseño exclusivo Slobber's</li>
+    </ul>
+
+</section>
+
+<!-- RECOMENDADOS -->
+<section class="recomendados">
+
+    <h2>También te puede gustar</h2>
+
+    <div class="grid-recomendados" id="recomendados"></div>
+
+</section>
+
+<!-- CARRITO -->
+<div id="carrito">
+    <div class="carrito-header">
+        <h2>🛒 Carrito</h2>
+        <span onclick="toggleCart()">✕</span>
+    </div>
+
+    <div id="user-box"></div>
+    <ul id="listaCarrito"></ul>
+
+    <p id="total">Total: 0€</p>
+    <button onclick="checkout()">FINALIZAR COMPRA</button>
+</div>
+
+<script>
+let producto = JSON.parse(localStorage.getItem("productoSeleccionado"));
+
+document.getElementById("nombre").innerText = producto.nombre;
+document.getElementById("precio").innerText = producto.precio + "€";
+document.getElementById("imgPrincipal").src = producto.imagen;
+
+let talla = "";
+
+function selectSize(el){
+    document.querySelectorAll(".tallas-pro span").forEach(e=>e.classList.remove("activa"));
+    el.classList.add("activa");
+    talla = el.innerText;
+}
+
+let cantidad = 1;
+
+function cambiarCantidad(n){
+    cantidad += n;
+    if(cantidad < 1) cantidad = 1;
+    document.getElementById("cantidad").innerText = cantidad;
+}
+
+function comprar(){
+    if(!talla){
+        alert("Selecciona talla");
+        return;
+    }
+    añadirAlCarrito(producto, talla, cantidad);
+}
+
+function cambiarImg(el){
+    document.getElementById("imgPrincipal").src = el.src;
+}
+
+/* ================= RECOMENDADOS AUTOMÁTICOS ================= */
+
+function cargarRecomendados(){
+
+    let productos = JSON.parse(localStorage.getItem("productos")) || [];
+
+    let contenedor = document.getElementById("recomendados");
+
+    if(!contenedor) return;
+
+    // Evita mostrar el mismo producto
+    let filtrados = productos.filter(p => p.nombre !== producto.nombre);
+
+    // Mezcla aleatoria
+    filtrados.sort(() => 0.5 - Math.random());
+
+    // Máximo 4
+    filtrados = filtrados.slice(0,4);
+
+    contenedor.innerHTML = "";
+
+    filtrados.forEach(p => {
+        contenedor.innerHTML += `
+            <div class="card-rec" onclick="verProducto('${p.nombre}','${p.precio}','${p.imagen}')">
+                <img src="${p.imagen}">
+                <p>${p.nombre}</p>
+                <span>${p.precio}€</span>
+            </div>
+        `;
+    });
+}
+
+/* 🔥 LLAMADA */
+cargarRecomendados();
+</script>
+
+</body>
+</html>

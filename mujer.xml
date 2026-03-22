@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE tienda SYSTEM "tienda.dtd">
+<?xml-stylesheet type="text/xsl" href="tienda.xsl"?>
+
+<tienda>
+    
+    <producto>
+        <nombre>Cyber Dress</nombre>
+        <precio>70</precio>
+        <imagen>img/mujer1.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Neon Jacket</nombre>
+        <precio>120</precio>
+        <imagen>img/mujer2.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Dark Outfit</nombre>
+        <precio>95</precio>
+        <imagen>img/mujer3.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Future Style Set</nombre>
+        <precio>110</precio>
+        <imagen>img/mujer4.jpg</imagen>
+    </producto>
+    
+</tienda>
