@@ -292,3 +292,40 @@ function toggleMenu(){
     let menu = document.getElementById("nav-menu");
     if(menu) menu.classList.toggle("activo");
 }
+
+/* ================= BUSCADOR ================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const buscador = document.getElementById("buscador");
+
+    if(!buscador) return;
+
+    buscador.addEventListener("keyup", () => {
+
+        const texto = buscador.value.toLowerCase();
+        const productos = document.querySelectorAll(".card-pro");
+
+        productos.forEach(p => {
+            const nombre = p.innerText.toLowerCase();
+
+            if(nombre.includes(texto)){
+                p.style.display = "block";
+            } else {
+                p.style.display = "none";
+            }
+        });
+
+    });
+
+});
+
+window.addEventListener("load", () => {
+
+    const loader = document.getElementById("loader");
+
+    setTimeout(() => {
+        loader.classList.add("hidden");
+    }, 800); // puedes ajustar tiempo
+
+});

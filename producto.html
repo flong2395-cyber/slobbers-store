@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+<meta charset="UTF-8">
 <title>Producto</title>
 <link rel="stylesheet" href="estilos.css">
 <script src="script.js"></script>
@@ -26,91 +27,96 @@
     </div>
 </header>
 
-<!-- PRODUCTO -->
-<div class="producto-pro">
+<!-- 🔥 CONTENEDOR GLOBAL (CLAVE) -->
+<main class="producto-wrapper">
 
-    <div class="producto-img-pro">
-        <img id="imgPrincipal">
+    <!-- PRODUCTO -->
+    <section class="producto-pro">
 
-        <div class="miniaturas-pro">
-            <img onclick="cambiarImg(this)" src="img/hombre.jpg">
-            <img onclick="cambiarImg(this)" src="img/hombre.jpg">
-            <img onclick="cambiarImg(this)" src="img/hombre.jpg">
-        </div>
-    </div>
+        <figure class="producto-img-pro">
+            <img id="imgPrincipal" alt="Producto">
 
-    <div class="producto-info-pro">
+            <div class="miniaturas-pro">
+                <img onclick="cambiarImg(this)" src="img/hombre.jpg" alt="">
+                <img onclick="cambiarImg(this)" src="img/hombre.jpg" alt="">
+                <img onclick="cambiarImg(this)" src="img/hombre.jpg" alt="">
+            </div>
+        </figure>
 
-        <p class="brand">SLOBBER'S</p>
-        <h1 id="nombre"></h1>
-        <p class="precio" id="precio"></p>
+        <article class="producto-info-pro">
 
-        <h3>Size</h3>
-        <div class="tallas-pro">
-            <span onclick="selectSize(this)">S</span>
-            <span onclick="selectSize(this)">M</span>
-            <span onclick="selectSize(this)">L</span>
-            <span onclick="selectSize(this)">XL</span>
-            <span onclick="selectSize(this)">2XL</span>
-            <span onclick="selectSize(this)">3XL</span>
-            <span onclick="selectSize(this)">4XL</span>
-        </div>
+            <p class="brand">SLOBBER'S</p>
+            <h1 id="nombre"></h1>
+            <p class="precio" id="precio"></p>
 
-        <h3>Quantity</h3>
-        <div class="cantidad-pro">
-            <button onclick="cambiarCantidad(-1)">−</button>
-            <span id="cantidad">1</span>
-            <button onclick="cambiarCantidad(1)">+</button>
-        </div>
+            <h3>Size</h3>
+            <div class="tallas-pro">
+                <span onclick="selectSize(this)">S</span>
+                <span onclick="selectSize(this)">M</span>
+                <span onclick="selectSize(this)">L</span>
+                <span onclick="selectSize(this)">XL</span>
+                <span onclick="selectSize(this)">2XL</span>
+                <span onclick="selectSize(this)">3XL</span>
+                <span onclick="selectSize(this)">4XL</span>
+            </div>
 
-        <button class="btn-pro" onclick="comprar()">
-            Añadir al carrito
-        </button>
+            <h3>Quantity</h3>
+            <div class="cantidad-pro">
+                <button onclick="cambiarCantidad(-1)">−</button>
+                <span id="cantidad">1</span>
+                <button onclick="cambiarCantidad(1)">+</button>
+            </div>
 
-        <ul class="descripcion-pro">
-            <li>100% Cotton</li>
-            <li>Unisex</li>
-            <li>Regular Fit</li>
-            <li>Premium Design</li>
+            <button class="btn-pro" onclick="comprar()">
+                Añadir al carrito
+            </button>
+
+            <ul class="descripcion-pro">
+                <li>100% Cotton</li>
+                <li>Unisex</li>
+                <li>Regular Fit</li>
+                <li>Premium Design</li>
+            </ul>
+
+        </article>
+
+    </section>
+
+    <!-- DESCRIPCIÓN -->
+    <section class="detalle-pro">
+
+        <h2>Descripción</h2>
+
+        <p>
+            Inspirada en el estilo urbano futurista, la Cyber Jacket redefine el streetwear moderno.
+            Diseñada para destacar, combina estética cyberpunk con materiales premium.
+        </p>
+
+        <p>
+            Perfecta para uso diario o outfits más agresivos, aporta presencia y comodidad.
+        </p>
+
+        <ul>
+            <li>Tejido técnico premium</li>
+            <li>Alta durabilidad</li>
+            <li>Diseño exclusivo Slobber's</li>
         </ul>
 
-    </div>
+    </section>
 
-</div>
+    <!-- RECOMENDADOS -->
+    <section class="recomendados">
 
-<!-- DESCRIPCIÓN DETALLADA -->
-<section class="detalle-pro">
+        <h2>También te puede gustar</h2>
 
-    <h2>Descripción</h2>
+        <div class="grid-recomendados" id="recomendados"></div>
 
-    <p>
-        Inspirada en el estilo urbano futurista, la Cyber Jacket redefine el streetwear moderno.
-        Diseñada para destacar, combina estética cyberpunk con materiales premium.
-    </p>
+    </section>
 
-    <p>
-        Perfecta para uso diario o outfits más agresivos, aporta presencia y comodidad.
-    </p>
-
-    <ul>
-        <li>Tejido técnico premium</li>
-        <li>Alta durabilidad</li>
-        <li>Diseño exclusivo Slobber's</li>
-    </ul>
-
-</section>
-
-<!-- RECOMENDADOS -->
-<section class="recomendados">
-
-    <h2>También te puede gustar</h2>
-
-    <div class="grid-recomendados" id="recomendados"></div>
-
-</section>
+</main>
 
 <!-- CARRITO -->
-<div id="carrito">
+<aside id="carrito">
     <div class="carrito-header">
         <h2>🛒 Carrito</h2>
         <span onclick="toggleCart()">✕</span>
@@ -121,7 +127,7 @@
 
     <p id="total">Total: 0€</p>
     <button onclick="checkout()">FINALIZAR COMPRA</button>
-</div>
+</aside>
 
 <script>
 let producto = JSON.parse(localStorage.getItem("productoSeleccionado"));
@@ -158,7 +164,7 @@ function cambiarImg(el){
     document.getElementById("imgPrincipal").src = el.src;
 }
 
-/* ================= RECOMENDADOS AUTOMÁTICOS ================= */
+/* ================= RECOMENDADOS ================= */
 
 function cargarRecomendados(){
 
@@ -168,13 +174,10 @@ function cargarRecomendados(){
 
     if(!contenedor) return;
 
-    // Evita mostrar el mismo producto
     let filtrados = productos.filter(p => p.nombre !== producto.nombre);
 
-    // Mezcla aleatoria
     filtrados.sort(() => 0.5 - Math.random());
 
-    // Máximo 4
     filtrados = filtrados.slice(0,4);
 
     contenedor.innerHTML = "";
@@ -190,7 +193,6 @@ function cargarRecomendados(){
     });
 }
 
-/* 🔥 LLAMADA */
 cargarRecomendados();
 </script>
 

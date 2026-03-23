@@ -8,6 +8,7 @@
         <html>
             <head>
                 <title>Slobber's</title>
+                <meta charset="UTF-8"/>
                 <link rel="stylesheet" href="estilos.css"/>
                 <script src="script.js"></script>
             </head>
@@ -15,49 +16,173 @@
             <body>
                 
                 <header class="header-pro">
+                    
                     <div class="logo">
                         <a href="index.xml">SLOBBER'S</a>
                     </div>
                     
-                    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-                    
-                    <nav class="nav-menu" id="nav-menu">
+                    <nav class="nav-menu">
                         <a href="hombre.xml">CABALLEROS</a>
                         <a href="mujer.xml">DAMAS</a>
-                        <a href="bisuteria.xml">ARTÍCULOS</a>
                     </nav>
+                    
+                    <div class="search-box">
+                        <input type="text" id="buscador" placeholder="Buscar productos..."/>
+                    </div>
                     
                     <div class="header-actions">
                         <div class="icono" onclick="toggleCart()">
                             🛒 <span id="cart-count">0</span>
                         </div>
                     </div>
+                    
                 </header>
                 
-                <section class="grid">
+                <main>
                     
-                    <xsl:for-each select="tienda/producto">
+                    <!-- ================= CAMISAS ================= -->
+                    <section class="categoria">
+                        <h2>CAMISAS</h2>
                         
-                        <div class="card-pro"
-                             onclick="verProducto('{nombre}', '{precio}', '{imagen}')">
-                            
-                            <div class="card-img">
-                                <img src="{imagen}" />
-                            </div>
-                            
-                            <div class="card-info">
-                                <p class="brand">SLOBBER'S</p>
-                                <h3><xsl:value-of select="nombre"/></h3>
-                                <p class="price"><xsl:value-of select="precio"/> €</p>
-                            </div>
-                            
+                        <div class="grid">
+                            <xsl:for-each select="tienda/producto[position() &lt;= 4]">
+                                
+                                <article class="card-pro"
+                                         onclick="verProducto('{nombre}', '{precio}', '{imagen}')">
+                                    
+                                    <figure class="card-img">
+                                        <img src="{imagen}" alt="{nombre}"/>
+                                    </figure>
+                                    
+                                    <div class="card-info">
+                                        <p class="brand">SLOBBER'S</p>
+                                        <h3><xsl:value-of select="nombre"/></h3>
+                                        <p class="price">
+                                            <xsl:value-of select="precio"/> €
+                                        </p>
+                                    </div>
+                                    
+                                </article>
+                                
+                            </xsl:for-each>
                         </div>
-                        
-                    </xsl:for-each>
+                    </section>
                     
-                </section>
+                    <!-- ================= CHAQUETAS ================= -->
+                    <section class="categoria">
+                        <h2>CHAQUETAS</h2>
+                        
+                        <div class="grid">
+                            <xsl:for-each select="tienda/producto[position() &gt; 4 and position() &lt;= 8]">
+                                
+                                <article class="card-pro"
+                                         onclick="verProducto('{nombre}', '{precio}', '{imagen}')">
+                                    
+                                    <figure class="card-img">
+                                        <img src="{imagen}" alt="{nombre}"/>
+                                    </figure>
+                                    
+                                    <div class="card-info">
+                                        <p class="brand">SLOBBER'S</p>
+                                        <h3><xsl:value-of select="nombre"/></h3>
+                                        <p class="price">
+                                            <xsl:value-of select="precio"/> €
+                                        </p>
+                                    </div>
+                                    
+                                </article>
+                                
+                            </xsl:for-each>
+                        </div>
+                    </section>
+                    
+                    <!-- ================= PANTALONES ================= -->
+                    <section class="categoria">
+                        <h2>PANTALONES</h2>
+                        
+                        <div class="grid">
+                            <xsl:for-each select="tienda/producto[position() &gt; 8 and position() &lt;= 12]">
+                                
+                                <article class="card-pro"
+                                         onclick="verProducto('{nombre}', '{precio}', '{imagen}')">
+                                    
+                                    <figure class="card-img">
+                                        <img src="{imagen}" alt="{nombre}"/>
+                                    </figure>
+                                    
+                                    <div class="card-info">
+                                        <p class="brand">SLOBBER'S</p>
+                                        <h3><xsl:value-of select="nombre"/></h3>
+                                        <p class="price">
+                                            <xsl:value-of select="precio"/> €
+                                        </p>
+                                    </div>
+                                    
+                                </article>
+                                
+                            </xsl:for-each>
+                        </div>
+                    </section>
+                    
+                    <!-- ================= CALZADO ================= -->
+                    <section class="categoria">
+                        <h2>CALZADO</h2>
+                        
+                        <div class="grid">
+                            <xsl:for-each select="tienda/producto[position() &gt; 12 and position() &lt;= 16]">
+                                
+                                <article class="card-pro"
+                                         onclick="verProducto('{nombre}', '{precio}', '{imagen}')">
+                                    
+                                    <figure class="card-img">
+                                        <img src="{imagen}" alt="{nombre}"/>
+                                    </figure>
+                                    
+                                    <div class="card-info">
+                                        <p class="brand">SLOBBER'S</p>
+                                        <h3><xsl:value-of select="nombre"/></h3>
+                                        <p class="price">
+                                            <xsl:value-of select="precio"/> €
+                                        </p>
+                                    </div>
+                                    
+                                </article>
+                                
+                            </xsl:for-each>
+                        </div>
+                    </section>
+                    
+                    <!-- ================= ARTÍCULOS ================= -->
+                    <section class="categoria" id="articulos">
+                        <h2>ARTÍCULOS</h2>
+                        
+                        <div class="grid">
+                            <xsl:for-each select="tienda/producto[position() &gt; 16 and position() &lt;= 20]">
+                                
+                                <article class="card-pro"
+                                         onclick="verProducto('{nombre}', '{precio}', '{imagen}')">
+                                    
+                                    <figure class="card-img">
+                                        <img src="{imagen}" alt="{nombre}"/>
+                                    </figure>
+                                    
+                                    <div class="card-info">
+                                        <p class="brand">SLOBBER'S</p>
+                                        <h3><xsl:value-of select="nombre"/></h3>
+                                        <p class="price">
+                                            <xsl:value-of select="precio"/> €
+                                        </p>
+                                    </div>
+                                    
+                                </article>
+                                
+                            </xsl:for-each>
+                        </div>
+                    </section>
+
+                </main>
                 
-                <div id="carrito">
+                <aside id="carrito">
                     
                     <div class="carrito-header">
                         <h2>🛒 Carrito</h2>
@@ -68,9 +193,11 @@
                     <ul id="listaCarrito"></ul>
                     
                     <p id="total">Total: 0€</p>
-                    <button onclick="checkout()">FINALIZAR COMPRA</button>
+                    <button class="checkout-btn" onclick="checkout()">
+                        FINALIZAR COMPRA
+                    </button>
                     
-                </div>
+                </aside>
                 
             </body>
         </html>

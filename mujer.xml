@@ -28,4 +28,94 @@
         <imagen>img/mujer4.jpg</imagen>
     </producto>
     
+    <producto>
+        <nombre>Articulo</nombre>
+        <precio>0</precio>
+        <imagen>img/articulo.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Articulo</nombre>
+        <precio>0</precio>
+        <imagen>img/articulo.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Articulo</nombre>
+        <precio>0</precio>
+        <imagen>img/articulo.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Articulo</nombre>
+        <precio>0</precio>
+        <imagen>img/articulo.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Articulo</nombre>
+        <precio>0</precio>
+        <imagen>img/articulo.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Articulo</nombre>
+        <precio>0</precio>
+        <imagen>img/articulo.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Articulo</nombre>
+        <precio>0</precio>
+        <imagen>img/articulo.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Articulo</nombre>
+        <precio>0</precio>
+        <imagen>img/articulo.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Articulo</nombre>
+        <precio>0</precio>
+        <imagen>img/articulo.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Articulo</nombre>
+        <precio>0</precio>
+        <imagen>img/articulo.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Articulo</nombre>
+        <precio>0</precio>
+        <imagen>img/articulo.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Articulo</nombre>
+        <precio>0</precio>
+        <imagen>img/articulo.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Articulo</nombre>
+        <precio>0</precio>
+        <imagen>img/articulo.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Articulo</nombre>
+        <precio>0</precio>
+        <imagen>img/articulo.jpg</imagen>
+    </producto>
+    
+    <producto>
+        <nombre>Articulo</nombre>
+        <precio>0</precio>
+        <imagen>img/articulo.jpg</imagen>
+    </producto>
+    
 </tienda>
