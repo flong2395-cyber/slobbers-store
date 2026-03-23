@@ -26,8 +26,11 @@ function guardarCarrito(carrito){
 /* ================= CARRITO ================= */
 
 function toggleCart(){
-    let c = document.getElementById("carrito");
-    if(c) c.classList.toggle("mostrar");
+    const carrito = document.getElementById("carrito");
+
+    if(!carrito) return;
+
+    carrito.classList.toggle("mostrar");
 }
 
 function eliminar(i){
@@ -329,3 +332,42 @@ window.addEventListener("load", () => {
     }, 800); // puedes ajustar tiempo
 
 });
+
+const imagenes = [
+    "img/producto1.jpg",
+    "img/producto2.jpg",
+    "img/producto3.jpg"
+];
+
+let index = 0;
+
+const imgPrincipal = document.getElementById("img-principal");
+const contador = document.getElementById("contador");
+const miniaturas = document.querySelectorAll(".miniaturas-pro img");
+
+function actualizarGaleria(){
+    imgPrincipal.src = imagenes[index];
+    contador.textContent = `${index + 1}/${imagenes.length}`;
+
+    miniaturas.forEach((img, i) => {
+        img.classList.toggle("activa", i === index);
+    });
+}
+
+function cambiarImagen(i){
+    index = i;
+    actualizarGaleria();
+}
+
+function nextImg(){
+    index = (index + 1) % imagenes.length;
+    actualizarGaleria();
+}
+
+function prevImg(){
+    index = (index - 1 + imagenes.length) % imagenes.length;
+    actualizarGaleria();
+}
+
+/* INICIALIZAR */
+document.addEventListener("DOMContentLoaded", actualizarGaleria);

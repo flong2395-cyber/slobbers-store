@@ -16,26 +16,24 @@
             <body>
                 
                 <header class="header-pro">
-                    
                     <div class="logo">
                         <a href="index.xml">SLOBBER'S</a>
                     </div>
                     
-                    <nav class="nav-menu">
-                        <a href="hombre.xml">CABALLEROS</a>
-                        <a href="mujer.xml">DAMAS</a>
-                    </nav>
-                    
-                    <div class="search-box">
-                        <input type="text" id="buscador" placeholder="Buscar productos..."/>
-                    </div>
-                    
-                    <div class="header-actions">
+                    <div class="header-right">
+                        <nav class="nav-menu">
+                            <a href="hombre.xml">CABALLEROS</a>
+                            <a href="mujer.xml">DAMAS</a>
+                        </nav>
+                        
+                        <div class="search-box">
+                            <input type="text" id="buscador" placeholder="Buscar productos..."/>
+                        </div>
+                        
                         <div class="icono" onclick="toggleCart()">
                             🛒 <span id="cart-count">0</span>
                         </div>
                     </div>
-                    
                 </header>
                 
                 <main>
@@ -198,6 +196,14 @@
                     </button>
                     
                 </aside>
+                
+            <footer class="footer">
+
+                <div class="footer-bottom">
+                    <p>© 2026 Slobber's - Francisco De la Cruz</p>
+                </div> 
+                    
+            </footer>
                 
             </body>
         </html>

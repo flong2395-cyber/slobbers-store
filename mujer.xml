@@ -7,25 +7,25 @@
     <producto>
         <nombre>Cyber Dress</nombre>
         <precio>70</precio>
-        <imagen>img/mujer1.jpg</imagen>
+        <imagen>img/5.jpg</imagen>
     </producto>
     
     <producto>
         <nombre>Neon Jacket</nombre>
         <precio>120</precio>
-        <imagen>img/mujer2.jpg</imagen>
+        <imagen>img/6.jpg</imagen>
     </producto>
     
     <producto>
         <nombre>Dark Outfit</nombre>
         <precio>95</precio>
-        <imagen>img/mujer3.jpg</imagen>
+        <imagen>img/7.jpg</imagen>
     </producto>
     
     <producto>
         <nombre>Future Style Set</nombre>
         <precio>110</precio>
-        <imagen>img/mujer4.jpg</imagen>
+        <imagen>img/8.jpg</imagen>
     </producto>
     
     <producto>

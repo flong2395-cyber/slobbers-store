@@ -27,22 +27,24 @@
                 
                 <!-- ================= HEADER ================= -->
                 <header class="header-pro">
-                    
                     <div class="logo">
                         <a href="index.xml">SLOBBER'S</a>
                     </div>
                     
-                    <nav class="nav-menu" id="nav-menu">
-                        <a href="hombre.xml">CABALLEROS</a>
-                        <a href="mujer.xml">DAMAS</a>
-                    </nav>
-                    
-                    <div class="header-actions">
+                    <div class="header-right">
+                        <nav class="nav-menu">
+                            <a href="hombre.xml">CABALLEROS</a>
+                            <a href="mujer.xml">DAMAS</a>
+                        </nav>
+                        
+                        <div class="search-box">
+                            <input type="text" id="buscador" placeholder="Buscar productos..."/>
+                        </div>
+                        
                         <div class="icono" onclick="toggleCart()">
                             🛒 <span id="cart-count">0</span>
                         </div>
                     </div>
-                    
                 </header>
                 
                 <!-- ================= MAIN ================= -->
@@ -102,13 +104,13 @@
                                 </article>
                                 
                                 <article class="home-card">
-                                    <img src="img/zapatilla2.jpg" alt="Humanrace Edition"/>
+                                    <img src="img/conjunto2.jpg" alt="Humanrace Edition"/>
                                     <p class="precio">€ 160</p>
                                     <p>Humanrace Edition</p>
                                 </article>
                                 
                                 <article class="home-card">
-                                    <img src="img/conjunto2.jpg" alt="Chaqueta Tech"/>
+                                    <img src="img/conjunto3.jpg" alt="Chaqueta Tech"/>
                                     <p class="precio">€ 120</p>
                                     <p>Chaqueta Tech</p>
                                 </article>
@@ -271,7 +273,7 @@
                     </div>
                     
                     <div class="footer-bottom">
-                        <p>© 2026 Slobber's - Proyecto educativo</p>
+                        <p>© 2026 Slobber's - Francisco De la Cruz</p>
                     </div>
                     
                 </footer>

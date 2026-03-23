@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Producto</title>
 <link rel="stylesheet" href="estilos.css">
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </head>
 
 <body>
@@ -14,104 +14,107 @@
         <a href="index.xml">SLOBBER'S</a>
     </div>
 
-    <nav class="nav-menu">
-        <a href="hombre.xml">CABALLEROS</a>
-        <a href="mujer.xml">DAMAS</a>
-        <a href="bisuteria.xml">ARTÍCULOS</a>
-    </nav>
+    <div class="header-right">
+        <nav class="nav-menu">
+            <a href="hombre.xml">CABALLEROS</a>
+            <a href="mujer.xml">DAMAS</a>
+        </nav>
 
-    <div class="header-actions">
+        <div class="search-box">
+            <input type="text" id="buscador" placeholder="Buscar productos..."/>
+        </div>
+
         <div class="icono" onclick="toggleCart()">
             🛒 <span id="cart-count">0</span>
         </div>
     </div>
 </header>
 
-<!-- 🔥 CONTENEDOR GLOBAL (CLAVE) -->
 <main class="producto-wrapper">
 
-    <!-- PRODUCTO -->
-    <section class="producto-pro">
+<section class="producto-pro">
 
-        <figure class="producto-img-pro">
+    <!-- GALERÍA -->
+    <div class="galeria-producto">
+
+        <div class="imagen-principal">
             <img id="imgPrincipal" alt="Producto">
+        </div>
 
-            <div class="miniaturas-pro">
-                <img onclick="cambiarImg(this)" src="img/hombre.jpg" alt="">
-                <img onclick="cambiarImg(this)" src="img/hombre.jpg" alt="">
-                <img onclick="cambiarImg(this)" src="img/hombre.jpg" alt="">
-            </div>
-        </figure>
+        <div class="controles-galeria">
+            <button onclick="prevImg()">&#10094;</button>
+            <span id="contador">1/3</span>
+            <button onclick="nextImg()">&#10095;</button>
+        </div>
 
-        <article class="producto-info-pro">
+        <div class="miniaturas-pro" id="miniaturas"></div>
 
-            <p class="brand">SLOBBER'S</p>
-            <h1 id="nombre"></h1>
-            <p class="precio" id="precio"></p>
+    </div>
 
-            <h3>Size</h3>
-            <div class="tallas-pro">
-                <span onclick="selectSize(this)">S</span>
-                <span onclick="selectSize(this)">M</span>
-                <span onclick="selectSize(this)">L</span>
-                <span onclick="selectSize(this)">XL</span>
-                <span onclick="selectSize(this)">2XL</span>
-                <span onclick="selectSize(this)">3XL</span>
-                <span onclick="selectSize(this)">4XL</span>
-            </div>
+    <!-- INFO -->
+    <article class="producto-info-pro">
 
-            <h3>Quantity</h3>
-            <div class="cantidad-pro">
-                <button onclick="cambiarCantidad(-1)">−</button>
-                <span id="cantidad">1</span>
-                <button onclick="cambiarCantidad(1)">+</button>
-            </div>
+        <p class="brand">SLOBBER'S</p>
+        <h1 id="nombre"></h1>
+        <p class="precio" id="precio"></p>
 
-            <button class="btn-pro" onclick="comprar()">
-                Añadir al carrito
-            </button>
+        <h3>Size</h3>
+        <div class="tallas-pro">
+            <span onclick="selectSize(this)">S</span>
+            <span onclick="selectSize(this)">M</span>
+            <span onclick="selectSize(this)">L</span>
+            <span onclick="selectSize(this)">XL</span>
+            <span onclick="selectSize(this)">2XL</span>
+            <span onclick="selectSize(this)">3XL</span>
+            <span onclick="selectSize(this)">4XL</span>
+        </div>
 
-            <ul class="descripcion-pro">
-                <li>100% Cotton</li>
-                <li>Unisex</li>
-                <li>Regular Fit</li>
-                <li>Premium Design</li>
-            </ul>
+        <h3>Quantity</h3>
+        <div class="cantidad-pro">
+            <button onclick="cambiarCantidad(-1)">−</button>
+            <span id="cantidad">1</span>
+            <button onclick="cambiarCantidad(1)">+</button>
+        </div>
 
-        </article>
+        <button class="btn-pro" onclick="comprar()">
+            Añadir al carrito
+        </button>
 
-    </section>
-
-    <!-- DESCRIPCIÓN -->
-    <section class="detalle-pro">
-
-        <h2>Descripción</h2>
-
-        <p>
-            Inspirada en el estilo urbano futurista, la Cyber Jacket redefine el streetwear moderno.
-            Diseñada para destacar, combina estética cyberpunk con materiales premium.
-        </p>
-
-        <p>
-            Perfecta para uso diario o outfits más agresivos, aporta presencia y comodidad.
-        </p>
-
-        <ul>
-            <li>Tejido técnico premium</li>
-            <li>Alta durabilidad</li>
-            <li>Diseño exclusivo Slobber's</li>
+        <ul class="descripcion-pro">
+            <li>100% Cotton</li>
+            <li>Unisex</li>
+            <li>Regular Fit</li>
+            <li>Premium Design</li>
         </ul>
 
-    </section>
+    </article>
 
-    <!-- RECOMENDADOS -->
-    <section class="recomendados">
+</section>
 
-        <h2>También te puede gustar</h2>
+<!-- DESCRIPCIÓN -->
+<section class="detalle-pro">
+    <h2>Descripción</h2>
 
-        <div class="grid-recomendados" id="recomendados"></div>
+    <p>
+        Inspirada en el estilo urbano futurista, esta prenda redefine el streetwear moderno.
+    </p>
 
-    </section>
+    <p>
+        Perfecta para uso diario o outfits más agresivos.
+    </p>
+
+    <ul>
+        <li>Tejido técnico premium</li>
+        <li>Alta durabilidad</li>
+        <li>Diseño exclusivo Slobber's</li>
+    </ul>
+</section>
+
+<!-- 🔥 RECOMENDADOS (MISMO DISEÑO QUE TIENDA) -->
+<section class="recomendados">
+    <h2>También te puede gustar</h2>
+    <div class="grid-recomendados" id="recomendados"></div>
+</section>
 
 </main>
 
@@ -126,75 +129,128 @@
     <ul id="listaCarrito"></ul>
 
     <p id="total">Total: 0€</p>
-    <button onclick="checkout()">FINALIZAR COMPRA</button>
+    <button class="checkout-btn" onclick="checkout()">FINALIZAR COMPRA</button>
 </aside>
 
 <script>
-let producto = JSON.parse(localStorage.getItem("productoSeleccionado"));
+document.addEventListener("DOMContentLoaded", () => {
+
+/* ================= PRODUCTO ================= */
+
+const producto = JSON.parse(localStorage.getItem("productoSeleccionado"));
+if(!producto) return;
 
 document.getElementById("nombre").innerText = producto.nombre;
 document.getElementById("precio").innerText = producto.precio + "€";
-document.getElementById("imgPrincipal").src = producto.imagen;
+
+/* ================= GALERÍA ================= */
+
+const imagenes = [producto.imagen, producto.imagen, producto.imagen];
+let index = 0;
+
+const imgPrincipal = document.getElementById("imgPrincipal");
+const contador = document.getElementById("contador");
+const miniaturasCont = document.getElementById("miniaturas");
+
+imagenes.forEach((img, i) => {
+    miniaturasCont.innerHTML += `
+        <img src="${img}" onclick="cambiarImagen(${i})">
+    `;
+});
+
+window.cambiarImagen = i => { index = i; actualizarGaleria(); };
+window.nextImg = () => { index = (index+1)%imagenes.length; actualizarGaleria(); };
+window.prevImg = () => { index = (index-1+imagenes.length)%imagenes.length; actualizarGaleria(); };
+
+function actualizarGaleria(){
+    imgPrincipal.src = imagenes[index];
+    contador.innerText = `${index+1}/${imagenes.length}`;
+
+    document.querySelectorAll("#miniaturas img").forEach((img, i)=>{
+        img.classList.toggle("activa", i === index);
+    });
+}
+
+actualizarGaleria();
+
+/* ================= TALLA ================= */
 
 let talla = "";
 
-function selectSize(el){
+window.selectSize = el => {
     document.querySelectorAll(".tallas-pro span").forEach(e=>e.classList.remove("activa"));
     el.classList.add("activa");
     talla = el.innerText;
-}
+};
+
+/* ================= CANTIDAD ================= */
 
 let cantidad = 1;
 
-function cambiarCantidad(n){
+window.cambiarCantidad = n => {
     cantidad += n;
     if(cantidad < 1) cantidad = 1;
     document.getElementById("cantidad").innerText = cantidad;
-}
+};
 
-function comprar(){
+/* ================= COMPRA ================= */
+
+window.comprar = () => {
     if(!talla){
         alert("Selecciona talla");
         return;
     }
     añadirAlCarrito(producto, talla, cantidad);
-}
+};
 
-function cambiarImg(el){
-    document.getElementById("imgPrincipal").src = el.src;
-}
-
-/* ================= RECOMENDADOS ================= */
+/* ================= RECOMENDADOS (CORREGIDO PRO) ================= */
 
 function cargarRecomendados(){
 
-    let productos = JSON.parse(localStorage.getItem("productos")) || [];
+    const contenedor = document.getElementById("recomendados");
+    const productos = JSON.parse(localStorage.getItem("productos")) || [];
 
-    let contenedor = document.getElementById("recomendados");
-
-    if(!contenedor) return;
+    if(productos.length === 0) return;
 
     let filtrados = productos.filter(p => p.nombre !== producto.nombre);
 
-    filtrados.sort(() => 0.5 - Math.random());
-
-    filtrados = filtrados.slice(0,4);
+    filtrados = filtrados.sort(() => Math.random() - 0.5).slice(0,4);
 
     contenedor.innerHTML = "";
 
     filtrados.forEach(p => {
         contenedor.innerHTML += `
-            <div class="card-rec" onclick="verProducto('${p.nombre}','${p.precio}','${p.imagen}')">
-                <img src="${p.imagen}">
-                <p>${p.nombre}</p>
-                <span>${p.precio}€</span>
-            </div>
+            <article class="card-pro"
+                onclick="verProducto('${p.nombre}','${p.precio}','${p.imagen}')">
+
+                <figure class="card-img">
+                    <img src="${p.imagen}" alt="${p.nombre}">
+                </figure>
+
+                <div class="card-info">
+                    <p class="brand">SLOBBER'S</p>
+                    <h3>${p.nombre}</h3>
+                    <p class="price">${p.precio} €</p>
+                </div>
+
+            </article>
         `;
     });
 }
 
 cargarRecomendados();
+
+});
 </script>
+
+            <footer class="footer">
+
+                <div class="footer-bottom">
+                    <p>© 2026 Slobber's - Francisco De la Cruz</p>
+                </div> 
+                    
+            </footer>
 
 </body>
 </html>
+```
