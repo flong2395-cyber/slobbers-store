@@ -293,7 +293,15 @@ if(!localStorage.getItem("productos")){
 
 function toggleMenu(){
     let menu = document.getElementById("nav-menu");
-    if(menu) menu.classList.toggle("activo");
+    let overlay = document.getElementById("menu-overlay");
+
+    if(menu && overlay){
+        menu.classList.toggle("activo");
+        overlay.classList.toggle("activo");
+    }
+
+    // 🔥 asegura actualización del carrito
+    render();
 }
 
 /* ================= BUSCADOR ================= */
